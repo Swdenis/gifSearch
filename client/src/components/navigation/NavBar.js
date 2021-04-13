@@ -1,6 +1,6 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Container, Menu } from 'semantic-ui-react';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { Container, Menu } from 'semantic-ui-react'
 
 export default function NavBar() {
   return (
@@ -10,5 +10,5 @@ export default function NavBar() {
         <Menu.Item as={NavLink} to="/favorites" content="My GIFs" />
       </Menu>
     </Container>
-  );
+  )
 }

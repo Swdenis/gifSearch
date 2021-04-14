@@ -18,6 +18,7 @@ module.exports = {
     'react'
   ],
   rules: {
-    'space-before-function-paren': ['error', 'never']
+    'space-before-function-paren': ['error', 'never'],
+    'react/prop-types': 0
   }
 }

@@ -1,10 +1,10 @@
-import React from 'react';
-import { Router, Route } from 'react-router-dom';
-import { Container } from 'semantic-ui-react';
-import Search from './search/Search';
-import Favorites from './favorites/Favorites';
-import history from '../history';
-import NavBar from './navigation/NavBar';
+import React from 'react'
+import { Router, Route } from 'react-router-dom'
+import { Container } from 'semantic-ui-react'
+import Search from './search/Search'
+import Favorites from './favorites/Favorites'
+import history from '../history'
+import NavBar from './navigation/NavBar'
 
 export default function App() {
   return (
@@ -18,5 +18,5 @@ export default function App() {
         </Container>
       </Router>
     </>
-  );
+  )
 }

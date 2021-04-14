@@ -5,8 +5,9 @@ import { setGif } from '../../redux/actions'
 import { Container } from 'semantic-ui-react'
 
 export default function SearchGrid({ width }) {
-  const onGifClick = () => {
-    dispatch(setGif())
+  const onGifClick = (gif, e) => {
+    e.preventDefault()
+    dispatch(setGif(gif.id))
   }
 
   const dispatch = useDispatch()

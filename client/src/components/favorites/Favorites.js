@@ -20,6 +20,11 @@ export default function Favorites() {
     console.log(gifs)
   }, [])
 
+  useEffect(() => {
+    gifArray && setGifs(Object.keys(gifArray))
+    console.log(gifs)
+  }, [gifArray])
+
   const fetchGifs = async () => {
     const result = await giphyFetch.gifs(gifs)
     return result

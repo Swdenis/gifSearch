@@ -1,15 +1,35 @@
-import React from 'react'
+/* eslint-disable multiline-ternary */
+/* eslint-disable space-before-function-paren */
+import React, { useEffect, useState } from 'react'
 import { Carousel } from '@giphy/react-components'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { giphyFetch } from '../../api/giphy'
+import { getGifs } from '../../redux/actions'
+import { Container } from 'semantic-ui-react'
 
 export default function Favorites() {
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-  const { gifs } = useSelector((state) => state.gifs) // string of fav gifs
+  const gifArray = Object.values(useSelector((state) => state.gifs))[0]
 
-  const fetchGifs = () => {
-    giphyFetch.search(gifs)
+  const [gifs, setGifs] = useState({})
+
+  useEffect(() => {
+    dispatch(getGifs())
+    gifArray && setGifs(Object.keys(gifArray))
+    console.log(gifs)
+  }, [])
+
+  const fetchGifs = async () => {
+    const result = await giphyFetch.gifs(gifs)
+    return result
   }
-  return <Carousel fetchGifs={fetchGifs} gifHeight={200} gutter={6} />
+
+  return gifs.length > 0 ? (
+    <Container style={{ marginTop: '10px' }}>
+      <Carousel fetchGifs={fetchGifs} gifHeight={400} gutter={6} />
+    </Container>
+  ) : (
+    'Loading...'
+  )
 }

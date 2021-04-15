@@ -9,6 +9,7 @@ export default function DeleteOverlay({ gif, isHovered }) {
     e.preventDefault()
     console.log(gif)
     dispatch(deleteGif(gif.id))
+    window.location.reload()
   }
   return (
     <div className="overlay">

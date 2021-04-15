@@ -18,12 +18,10 @@ export default function Favorites() {
   useEffect(() => {
     dispatch(getGifs())
     gifArray && setGifs(Object.keys(gifArray))
-    console.log(gifs)
   }, [])
 
   useEffect(() => {
     gifArray && setGifs(Object.keys(gifArray))
-    console.log(gifs)
   }, [gifArray])
 
   const fetchGifs = async () => {

@@ -7,7 +7,6 @@ export default function DeleteOverlay({ gif, isHovered }) {
   const dispatch = useDispatch()
   function handleDelete(e) {
     e.preventDefault()
-    console.log(gif)
     dispatch(deleteGif(gif.id))
     window.location.reload()
   }

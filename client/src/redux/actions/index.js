@@ -14,8 +14,7 @@ export const getGifs = () => async (dispatch) => {
 }
 
 export const deleteGif = (gifId) => async (dispatch) => {
-  const response = await axios.delete(`/gifs/${gifId}`)
-  console.log(response.data)
+  await axios.delete(`/gifs/${gifId}`)
   dispatch({ type: DELETE_GIF, payload: gifId })
 }
 

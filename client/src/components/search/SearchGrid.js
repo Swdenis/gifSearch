@@ -3,12 +3,12 @@ import { Grid, SearchContext } from '@giphy/react-components'
 import { useDispatch } from 'react-redux'
 import { setGif } from '../../redux/actions'
 import { Container } from 'semantic-ui-react'
-import AddOverlay from '../overlays/AddOverlay'
 
 export default function SearchGrid({ width }) {
   const onGifClick = (gif, e) => {
     e.preventDefault()
     dispatch(setGif(gif.id))
+    window.location.reload()
   }
 
   const dispatch = useDispatch()
@@ -17,7 +17,6 @@ export default function SearchGrid({ width }) {
   return (
     <Container style={{ marginTop: '10px' }}>
       <Grid
-        overlay={AddOverlay}
         key={searchKey}
         onGifClick={onGifClick}
         fetchGifs={fetchGifs}

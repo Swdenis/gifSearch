@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { giphyFetch } from '../../api/giphy'
 import { getGifs } from '../../redux/actions'
 import { Container } from 'semantic-ui-react'
+import DeleteOverlay from '../overlays/DeleteOverlay'
 
 export default function Favorites() {
   const dispatch = useDispatch()
@@ -32,7 +33,7 @@ export default function Favorites() {
 
   return gifs.length > 0 ? (
     <Container style={{ marginTop: '10px' }}>
-      <Carousel fetchGifs={fetchGifs} gifHeight={400} gutter={6} />
+      <Carousel overlay={DeleteOverlay} fetchGifs={fetchGifs} gifHeight={400} gutter={6} />
     </Container>
   ) : (
     'Loading...'

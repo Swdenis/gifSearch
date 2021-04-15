@@ -5,6 +5,7 @@ import Search from './search/Search'
 import Favorites from './favorites/Favorites'
 import history from '../history'
 import NavBar from './navigation/NavBar'
+import '../App.css'
 
 export default function App() {
   return (

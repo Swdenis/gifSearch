@@ -6,7 +6,7 @@ import SearchComponents from './SearchComponents'
 export default function Search() {
   return (
     <>
-      <SearchContextManager apiKey={API_KEY}>
+      <SearchContextManager apiKey={API_KEY} initialTerm="Austria">
         <SearchComponents />
       </SearchContextManager>
     </>
